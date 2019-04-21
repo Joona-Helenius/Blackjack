@@ -1,10 +1,11 @@
 package Game;
 
 public class Card {
-	private int value;
-	private Suite suite;
-	private boolean isAce;
-	private boolean isFace;
+	private final int value;
+	private final Suite suite;
+	private final boolean isAce;
+	private final boolean isFace;
+	
 	
 	public Card(){
 		value=0;
@@ -16,9 +17,9 @@ public class Card {
 	public Card(int value, Suite suite) {
 		this.value=value;
 		this.suite=suite;
-		if(value==13) {
+		if(value==14) {
 			this.isAce=true;
-			this.isAce=false;
+			this.isFace=false;
 		}
 		else if(value>10) {
 			this.isFace=true;
@@ -29,4 +30,18 @@ public class Card {
 			this.isAce=false;
 		}
 	}
+	public int getValue() {
+		return value;
+	}
+	public Suite suite() {
+		return suite;
+	}
+	public boolean getFace() {
+		return isFace;
+	}
+	public boolean getAce() {
+		return isAce;
+	}
+	
+	
 }
