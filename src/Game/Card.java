@@ -5,6 +5,8 @@ public class Card {
 	private final Suite suite;
 	private final boolean isAce;
 	private final boolean isFace;
+	private final String imgPath;
+	
 	
 	
 	public Card(){
@@ -12,11 +14,15 @@ public class Card {
 		suite=null;
 		isAce=false;
 		isFace=false;
+		imgPath=null;
 	}
 	
 	public Card(int value, Suite suite) {
 		this.value=value;
 		this.suite=suite;
+		String s=String.valueOf(value);
+		String s2=String.valueOf(suite);
+		imgPath=s+"_of_"+s2;
 		if(value==14) {
 			this.isAce=true;
 			this.isFace=false;
@@ -42,6 +48,7 @@ public class Card {
 	public boolean getAce() {
 		return isAce;
 	}
-	
-	
+	public String getImgPath() {
+		return imgPath;
+	}
 }

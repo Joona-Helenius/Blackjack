@@ -12,6 +12,9 @@ public class Player {
 	public void addACard(Card card) {
 		hand.add(card);
 	}
+	public Card getCardAtIndex(int i) {
+		return hand.get(i);
+	}
 	
 	public int getHandValue() {
 		int x=0;

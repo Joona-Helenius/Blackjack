@@ -2,5 +2,5 @@ package Game;
 
 public enum Suite {
 
-	HEART, SPADE, DIAMOND, CLUB;
+	hearts, spades, diamonds, clubs;
 }
