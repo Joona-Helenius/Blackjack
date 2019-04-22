@@ -2,13 +2,21 @@ package Game;
 
 import java.util.ArrayList;
 
+/**
+ * Luokka Player kuvaa pelaajaa, joka on vuorovaikutuksessa pelin kanssa.
+ * Player-luokalla on yksi attribuutti, Card-tyyppinen arraylist hand.
+ */
 public class Player {
 
-	private ArrayList<Card> hand;
+	public ArrayList<Card> hand;
 	
 	public Player() {
 		this.hand=new ArrayList<Card>();
 	}
+	/**
+     * Metodi addACard() lisää yhden card-tyyppisen kortin attribuutin hand listaan.
+     * @param card       Card tyyppinen olio
+     */
 	public void addACard(Card card) {
 		hand.add(card);
 	}
@@ -16,6 +24,11 @@ public class Player {
 		return hand.get(i);
 	}
 	
+	/**
+     * Metodi getHandValue() laskee koko käden korttien summan Blackjackin sääntöjen
+     * mukaan ja palauttaa tämän int tyyppisenä.
+     * @return palauttaa käden "arvon" kokonaislukutyyppisenä
+     */
 	public int getHandValue() {
 		int x=0;
 		int aces=0;

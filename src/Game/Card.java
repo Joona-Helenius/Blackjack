@@ -1,52 +1,37 @@
 package Game;
 
+/**
+ * Card-luokka luo pohjan Deck ja Player luokalle. Luokan avulla luodaan pelikortti olioita,
+ * jota peli käyttää laskeakseen erilaisia Blackjackkiin kuuluvia toimintoja. Luokan
+ * oliot saavat attribuuteiksi int tyyppisen arvon "value", Suite tyyppisen attribuu-
+ * tin suite (maa) ja String tyyppisen attribuutin imgPath, jolla ohjelma löytää korteil-
+ * le oikeat kuvat.
+ */
 public class Card {
 	private final int value;
 	private final Suite suite;
-	private final boolean isAce;
-	private final boolean isFace;
 	private final String imgPath;
 	
-	
-	
-	public Card(){
-		value=0;
-		suite=null;
-		isAce=false;
-		isFace=false;
-		imgPath=null;
-	}
-	
+	/**
+     * Card-luokan konstruktori, joka saa parametrina kortin arvon value ja kortin 
+     * maan suite.Normaalin konstruktorin tapaan, se luo Card-tyyppisiä olioita.
+     * Konstruktorista löytyy myös imgPath niminen String-muuttuja, jonka avulla
+     * ohjelma löytää korteille oikeat kuvat Game.images-kansiosta.
+     * @param value kortin arvo.
+     * @param suite kortin maa.
+     */
 	public Card(int value, Suite suite) {
 		this.value=value;
 		this.suite=suite;
 		String s=String.valueOf(value);
 		String s2=String.valueOf(suite);
 		imgPath=s+"_of_"+s2;
-		if(value==14) {
-			this.isAce=true;
-			this.isFace=false;
-		}
-		else if(value>10) {
-			this.isFace=true;
-			this.isAce=false;
-		}
-		else {
-			this.isFace=false;
-			this.isAce=false;
-		}
 	}
 	public int getValue() {
 		return value;
 	}
 	public Suite suite() {
 		return suite;
-	}
-	public boolean getFace() {
-		return isFace;
-	}
-	public boolean getAce() {
-		return isAce;
 	}
 	public String getImgPath() {
 		return imgPath;
