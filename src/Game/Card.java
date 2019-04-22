@@ -25,7 +25,7 @@ public class Card {
 		this.suite=suite;
 		String s=String.valueOf(value);
 		String s2=String.valueOf(suite);
-		imgPath=s+"_of_"+s2;
+		imgPath=s+"_of_"+s2;//korttien kuvat on tallennettu sellaisilla nimillä, että ne olisi helppo hakea ilman if/else tai swhich/case metodeja
 	}
 	public int getValue() {
 		return value;

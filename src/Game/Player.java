@@ -45,7 +45,7 @@ public class Player {
 				x+=a;
 			}
 		}
-		while(x>21 && aces>0) {
+		while(x>21 && aces>0) {//käden arvo muuttuu dynaamisesti, jos kädessä on ässiä ja käden arvo ylittäisi 21
 			x=x-10;
 			aces--;
 		}
